@@ -31,30 +31,59 @@
                             <button class="btn btn-panel" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+                    
                     <div class="panel-container show">
                         <div class="panel-content">
                             <!-- <div class="panel-tag">
                                 <p>Сформируйте массив данных и выведите полностью альбом.</p>
                             </div> -->
+                            <?php
+                            $images = [
+                              [
+                                      "images_path" => "img/demo/gallery/21.jpg",
+                                        "thumb_path" => "img/demo/gallery/thumb/21.jpg",
+                              ],
+                              [
+                                  "images_path" => "img/demo/gallery/22.jpg",
+                                  "thumb_path" => "img/demo/gallery/thumb/22.jpg",
+                              ],
+                              [
+                                  "images_path" => "img/demo/gallery/23.jpg",
+                                  "thumb_path" => "img/demo/gallery/thumb/23.jpg",
+                              ],
+                                [
+                                    "images_path" => "img/demo/gallery/24.jpg",
+                                    "thumb_path" => "img/demo/gallery/thumb/24.jpg",
+                                ],
+                                [
+                                    "images_path" => "img/demo/gallery/25.jpg",
+                                    "thumb_path" => "img/demo/gallery/thumb/25.jpg",
+                                ],
+                                [
+                                    "images_path" => "img/demo/gallery/26.jpg",
+                                    "thumb_path" => "img/demo/gallery/thumb/26.jpg",
+                                ],
+                                [
+                                    "images_path" => "img/demo/gallery/27.jpg",
+                                    "thumb_path" => "img/demo/gallery/thumb/27.jpg",
+                                ],
+                                [
+                                    "images_path" => "img/demo/gallery/28.jpg",
+                                    "thumb_path" => "img/demo/gallery/thumb/28.jpg",
+                                ],
+                                [
+                                    "images_path" => "img/demo/gallery/29.jpg",
+                                    "thumb_path" => "img/demo/gallery/thumb/29.jpg",
+                                ],
+                            ];
+                            ?>
                             <div id="js-lightgallery">
-                                <a class="" href="img/demo/gallery/21.jpg">
-                                    <img class="img-responsive" src="img/demo/gallery/thumb/21.jpg" alt="image">
+                                <?php foreach ($images as $image):?>
+                                <a class="" href="<?php echo $image['image_path'];?>">
+                                    <img class="img-responsive" src="<?php echo $image['thumb_path'];?>" alt="image">
+
                                 </a>
-                                <a class="" href="img/demo/gallery/22.jpg">
-                                    <img class="img-responsive" src="img/demo/gallery/thumb/22.jpg" alt="image">
-                                </a>
-                                <a class="" href="img/demo/gallery/23.jpg">
-                                    <img class="img-responsive" src="img/demo/gallery/thumb/23.jpg" alt="image">
-                                </a>
-                                <a class="" href="img/demo/gallery/24.jpg">
-                                    <img class="img-responsive" src="img/demo/gallery/thumb/24.jpg" alt="image">
-                                </a>
-                                <a class="" href="img/demo/gallery/25.jpg">
-                                    <img class="img-responsive" src="img/demo/gallery/thumb/25.jpg" alt="image">
-                                </a>
-                                <a class="" href="img/demo/gallery/26.jpg">
-                                    <img class="img-responsive" src="img/demo/gallery/thumb/26.jpg" alt="image">
-                                </a>
+                                <?php endforeach;?>
                             </div>
                         </div>
                     </div>

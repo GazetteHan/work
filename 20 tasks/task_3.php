@@ -30,36 +30,45 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+                    <?php
+                        $elements =[
+                                [
+                                        "title" => "Мои задачи",
+                                        "value" => "7 / 10",
+                                        "background" => "bg-fusion-400",
+                                        "progress_bar" =>"65"
+                                ],
+                                [
+                                        "title" => "Емкость диска",
+                                        "value" => "440 TB",
+                                        "background" => "bg-success-500",
+                                        "progress_bar" =>"34"
+                                ],
+                                [
+                                        "title" => "Пройдено уроков",
+                                        "value" => "77%",
+                                        "background" => "bg-info-400",
+                                        "progress_bar" =>"77"
+                                ],
+                                [
+                                        "title" => "Осталось дней",
+                                        "value" => "2 дня",
+                                        "background" => "bg-primary-300",
+                                        "progress_bar" =>"84"
+                                ],
+                        ];
+                    ?>
                     <div class="panel-container show">
                         <div class="panel-content">
+                            <?php foreach ($elements as $element):?>
                             <div class="d-flex mt-2">
-                                Мои задачи
-                                <span class="d-inline-block ml-auto">7 / 10</span>
+                                <?php echo $element['title']?>
+                                <span class="d-inline-block ml-auto"><?php echo $element['value']?></span>
                             </div>
                             <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-fusion-400" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar <?php echo $element['background']?>" role="progress_bar" style="width: <?php echo $element['progress_bar']?>%;" aria-valuenow="<?php echo $element['progress_bar']?>" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <div class="d-flex">
-                                Емкость диска
-                                <span class="d-inline-block ml-auto">440 TB</span>
-                            </div>
-                            <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-success-500" role="progressbar" style="width: 34%;" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="d-flex">
-                                Пройдено уроков
-                                <span class="d-inline-block ml-auto">77%</span>
-                            </div>
-                            <div class="progress progress-sm mb-3">
-                                <div class="progress-bar bg-info-400" role="progressbar" style="width: 77%;" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                            <div class="d-flex">
-                                Осталось дней
-                                <span class="d-inline-block ml-auto">2 дня</span>
-                            </div>
-                            <div class="progress progress-sm mb-g">
-                                <div class="progress-bar bg-primary-300" role="progressbar" style="width: 84%;" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
+                            <?php endforeach;?>
                         </div>
                     </div>
                 </div>
