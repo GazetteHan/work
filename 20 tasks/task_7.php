@@ -36,39 +36,140 @@
                 </div>
             </div>
             <div class="row js-list-filter" id="js-contacts">
+                <?php
+                $users =[
+                    [
+                        "id" => 1,
+                        "username" => "Oliver Kopyov",
+                        "image" => "img/demo/avatars/avatar-b.png",
+                        "status" => "success",
+                        "profession" => "IT Director, Gotbootstrap Inc.",
+                        "tel" => "++1 317-456-2564",
+                        "email" => "oliver.kopyov@smartadminwebapp.com",
+                        "address" => "15 Charist St, Detroit, MI, 48212, USA",
+                        "tags" => "oliver kopyov",
+                        "facebook" => "facebook.com",
+                        "twitter" => "twitter.com",
+                        "linked" => "linked.com",
+
+                    ],
+                    [
+                        "id" => 2,
+                        "username" => "Jim Ketty",
+                        "image" => "img/demo/avatars/avatar-k.png",
+                        "status" => "success",
+                        "profession" => "Project Manager, Gotbootstrap Inc.",
+                        "tel" => "+1 313-779-3314",
+                        "email" => "jim.ketty@smartadminwebapp.com",
+                        "address" => "134 Tasy Rd, Detroit, MI, 48212, USA",
+                        "tags" => "",
+                        "facebook" => "facebook.com",
+                        "twitter" => "twitter.com",
+                        "linked" => "linked.com",
+
+                    ],
+                    [
+                        "id" => "",
+                        "username" => "Jim Ketty",
+                        "image" => "img/demo/avatars/avatar-k.png",
+                        "status" => "success",
+                        "profession" => "Xray Division, Gotbootstrap Inc.",
+                        "tel" => "+1 313-779-3314",
+                        "email" => "jim.ketty@smartadminwebapp.com",
+                        "address" => "134 Tasy Rd, Detroit, MI, 48212, USA",
+                        "tags" => "",
+                        "facebook" => "facebook.com",
+                        "twitter" => "twitter.com",
+                        "linked" => "linked.com",
+
+                    ],
+                    [
+                        "id" => "",
+                        "username" => "Dr. John Oliver",
+                        "image" => "img/demo/avatars/avatar-g.png",
+                        "status" => "success",
+                        "profession" => "Oncologist, Gotbootstrap Inc.",
+                        "tel" => "+1 313-779-8134",
+                        "email" => "john.oliver@smartadminwebapp.com",
+                        "address" => "134 Gallery St, Detroit, MI, 46214, USA",
+                        "tags" => "",
+                        "facebook" => "facebook.com",
+                        "twitter" => "twitter.com",
+                        "linked" => "linked.com",
+
+                    ],
+                    [
+                        "id" => "",
+                        "username" => "Sarah McBrook",
+                        "image" => "",
+                        "status" => "",
+                        "profession" => "",
+                        "tel" => "",
+                        "email" => "",
+                        "address" => "",
+                        "tags" => "",
+                        "facebook" => "facebook.com",
+                        "twitter" => "twitter.com",
+                        "linked" => "linked.com",
+
+                    ],
+                    [
+                        "id" => "",
+                        "username" => "Jimmy Fellan",
+                        "image" => "",
+                        "status" => "",
+                        "profession" => "",
+                        "tel" => "",
+                        "email" => "",
+                        "address" => "",
+                        "tags" => "",
+                        "facebook" => "facebook.com",
+                        "twitter" => "twitter.com",
+                        "linked" => "linked.com",
+
+                    ],
+                    [
+                        "id" => "",
+                        "username" => "Arica Grace",
+                        "image" => "",
+                        "status" => "",
+                        "profession" => "",
+                        "tel" => "",
+                        "email" => "",
+                        "address" => "",
+                        "tags" => "",
+                        "facebook" => "facebook.com",
+                        "twitter" => "twitter.com",
+                        "linked" => "linked.com",
+
+                        ],
+                    ];
+                    ?>
+                <?php foreach ($users as $user):?>
                 <div class="col-xl-4">
-                    <div id="c_1" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="oliver kopyov">
+                    <div id="c_<?php echo $user['tags']?>" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="<?php echo $user['tags']?>">
                         <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
                             <div class="d-flex flex-row align-items-center">
-                                <span class="status status-success mr-3">
-                                    <span class="rounded-circle profile-image d-block " style="background-image:url('img/demo/avatars/avatar-b.png'); background-size: cover;"></span>
+                                <span class="status status-<?php echo $user['status']?> mr-3">
+                                    <span class="rounded-circle profile-image d-block " style="background-image:url('<?php echo $user['image']?>'); background-size: cover;"></span>
                                 </span>
                                 <div class="info-card-text flex-1">
                                     <a href="javascript:void(0);" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
-                                        Oliver Kopyov
+                                        <?php echo $user['username']?>
                                         <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
                                     </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Send Email</a>
-                                        <a class="dropdown-item" href="#">Create Appointment</a>
-                                        <a class="dropdown-item" href="#">Block User</a>
-                                    </div>
-                                    <span class="text-truncate text-truncate-xl">IT Director, Gotbootstrap Inc.</span>
+                                    <span class="text-truncate text-truncate-xl"><?php echo $user['profession']?></span>
                                 </div>
-                                <button class="js-expand-btn btn btn-sm btn-default d-none waves-effect waves-themed" data-toggle="collapse" data-target="#c_1 > .card-body + .card-body" aria-expanded="false">
-                                    <span class="collapsed-hidden">+</span>
-                                    <span class="collapsed-reveal">-</span>
-                                </button>
                             </div>
                         </div>
                         <div class="card-body p-0 collapse show">
                             <div class="p-3">
                                 <a href="tel:+13174562564" class="mt-1 d-block fs-sm fw-400 text-dark">
-                                    <i class="fas fa-mobile-alt text-muted mr-2"></i> +1 317-456-2564</a>
+                                    <i class="fas fa-mobile-alt text-muted mr-2"></i> <?php echo $user['tel']?></a>
                                 <a href="mailto:oliver.kopyov@smartadminwebapp.com" class="mt-1 d-block fs-sm fw-400 text-dark">
-                                    <i class="fas fa-mouse-pointer text-muted mr-2"></i> oliver.kopyov@smartadminwebapp.com</a>
+                                    <i class="fas fa-mouse-pointer text-muted mr-2"></i> <?php echo $user['email']?></a>
                                 <address class="fs-sm fw-400 mt-4 text-muted">
-                                    <i class="fas fa-map-pin mr-2"></i> 15 Charist St, Detroit, MI, 48212, USA</address>
+                                    <i class="fas fa-map-pin mr-2"></i> <?php echo $user['address']?></address>
                                 <div class="d-flex flex-row">
                                     <a href="javascript:void(0);" class="mr-2 fs-xxl" style="color:#3b5998">
                                         <i class="fab fa-facebook-square"></i>
@@ -84,6 +185,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endforeach;?>
                 <div class="col-xl-4">
                     <div id="c_2" class="card border shadow-0 mb-g shadow-sm-hover" data-filter-tags="sesha gray">
                         <div class="card-body border-faded border-top-0 border-left-0 border-right-0 rounded-top">
@@ -186,76 +288,6 @@
                             <div class="d-flex flex-row align-items-center">
                                 <span class="status status-success mr-3">
                                     <span class="rounded-circle profile-image d-block " style="background-image:url('img/demo/avatars/avatar-k.png'); background-size: cover;"></span>
-                                    <?php
-                                    $users =[
-                                         [
-                                                 "id" => "",
-                                                 "username" => "Jim Ketty",
-                                                "image" => "img/demo/avatars/avatar-k.png",
-                                                "status" => "saccess",
-                                                "profession" => "Xray Division, Gotbootstrap Inc.",
-                                                "tel" => "+1 313-779-3314",
-                                                "email" => "jim.ketty@smartadminwebapp.com",
-                                                "address" => "134 Tasy Rd, Detroit, MI, 48212, USA",
-                                                "facebook" => "facebook.com",
-                                                "twitter" => "twitter.com",
-                                                "linked" => "linked.com",
-
-                                         ],
-                                        [
-                                            "username" => "Dr. John Oliver",
-                                            "image" => "",
-                                            "status" => "",
-                                            "profession" => "",
-                                            "tle" => "",
-                                            "email" => "",
-                                            "address" => "",
-                                            "facebook" => "facebook.com",
-                                            "twitter" => "twitter.com",
-                                            "linked" => "linked.com",
-
-                                        ],
-                                        [
-                                            "username" => "Sarah McBrook",
-                                            "image" => "",
-                                            "status" => "",
-                                            "profession" => "",
-                                            "tle" => "",
-                                            "email" => "",
-                                            "address" => "",
-                                            "facebook" => "facebook.com",
-                                            "twitter" => "twitter.com",
-                                            "linked" => "linked.com",
-
-                                        ],
-                                        [
-                                            "username" => "Jimmy Fellan",
-                                            "image" => "",
-                                            "status" => "",
-                                            "profession" => "",
-                                            "tle" => "",
-                                            "email" => "",
-                                            "address" => "",
-                                            "facebook" => "facebook.com",
-                                            "twitter" => "twitter.com",
-                                            "linked" => "linked.com",
-
-                                        ],
-                                        [
-                                            "username" => "Arica Grace",
-                                            "image" => "",
-                                            "status" => "",
-                                            "profession" => "",
-                                            "tle" => "",
-                                            "email" => "",
-                                            "address" => "",
-                                            "facebook" => "facebook.com",
-                                            "twitter" => "twitter.com",
-                                            "linked" => "linked.com",
-
-                                        ],
-                                    ];
-                                    ?>
                                 </span>
                                 <div class="info-card-text flex-1">
                                     <a href="javascript:void(0);" class="fs-xl text-truncate text-truncate-lg text-info" data-toggle="dropdown" aria-expanded="false">
@@ -300,17 +332,8 @@
                                         222222222222222222222222222222222222222222
                                         <i class="fal fa-angle-down d-inline-block ml-1 fs-md"></i>
                                     </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Send Email</a>
-                                        <a class="dropdown-item" href="#">Create Appointment</a>
-                                        <a class="dropdown-item" href="#">Block User</a>
-                                    </div>
                                     <span class="text-truncate text-truncate-xl">Oncologist, Gotbootstrap Inc.</span>
                                 </div>
-                                <button class="js-expand-btn btn btn-sm btn-default d-none waves-effect waves-themed" data-toggle="collapse" data-target="#c_5 > .card-body + .card-body" aria-expanded="false">
-                                    <span class="collapsed-hidden">+</span>
-                                    <span class="collapsed-reveal">-</span>
-                                </button>
                             </div>
                         </div>
                         <div class="card-body p-0 collapse show">
