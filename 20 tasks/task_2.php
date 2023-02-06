@@ -21,7 +21,7 @@
         <main id="js-page-content" role="main" class="page-content">
 
             <div class="col-md-6">
-                <div id="panel-1" class="panel"> sad
+                <div id="panel-1" class="panel">
                     <div class="panel-hdr">
                         <h2>
                             Задание
