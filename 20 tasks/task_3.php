@@ -31,45 +31,73 @@
                         </div>
                     </div>
                     <?php
-                        $elements =[
-                                [
-                                        "title" => "Мои задачи",
-                                        "value" => "7 / 10",
-                                        "background" => "bg-fusion-400",
-                                        "progress_bar" =>"65"
-                                ],
-                                [
-                                        "title" => "Емкость диска",
-                                        "value" => "440 TB",
-                                        "background" => "bg-success-500",
-                                        "progress_bar" =>"34"
-                                ],
-                                [
-                                        "title" => "Пройдено уроков",
-                                        "value" => "77%",
-                                        "background" => "bg-info-400",
-                                        "progress_bar" =>"77"
-                                ],
-                                [
-                                        "title" => "Осталось дней",
-                                        "value" => "2 дня",
-                                        "background" => "bg-primary-300",
-                                        "progress_bar" =>"84"
-                                ],
+
+                    $elements = [
+                            [
+
+                                "title" => "Мои задачи",
+                                "value" => "7 / 10",
+                                "background" => "bg-fusion-400",
+                                "progress_bar" =>"65"
+                            ],
+                        [
+
+                            "title" => "Емкость диска",
+                            "value" => "440 TB",
+                            "background" => "bg-success-500",
+                            "progress_bar" =>"34"
+                        ],
+
+                        [
+
+                            "title" => " Пройдено уроков",
+                            "value" => "77%",
+                            "background" => "g-info-400",
+                            "progress_bar" =>"77"
+                        ],
+
+                        [
+
+                            "title" => "Осталось дней",
+                            "value" => "2 дня",
+                            "background" => "bg-primary-300",
+                            "progress_bar" =>"84"
+                        ],
+
+                        [
+
+                            "title" => "Уровень лени",
+                            "value" => "100%",
+                            "background" => "bg-success-500",
+                            "progress_bar" =>"100"
+                        ],
+
+                        [
+
+                            "title" => "Осталось жизней",
+                            "value" => "5 жизней",
+                            "background" => "bg-fusion-400",
+                            "progress_bar" =>"50"
+                        ],
+
+
                         ];
+
+
                     ?>
                     <div class="panel-container show">
                         <div class="panel-content">
                             <?php foreach ($elements as $element):?>
-                            <div class="d-flex mt-2">
-                                <?php echo $element['title']?>
-                                <span class="d-inline-block ml-auto"><?php echo $element['value']?></span>
+                            <div class="d-fle">
+                                <?php echo $element['title'];?>
+
+                                <span class="d-inline-block ml-auto"><?php echo $element['value'];?></span>
                             </div>
                             <div class="progress progress-sm mb-3">
-                                <div class="progress-bar <?php echo $element['background']?>" role="progress_bar" style="width: <?php echo $element['progress_bar']?>%;" aria-valuenow="<?php echo $element['progress_bar']?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar <?php echo $element['background'];?>" role="progress_bar" style="width:<?php echo $element['progress_bar'];?>%;" aria-valuenow="<?php echo $element['progress_bar'];?>" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
-                            <?php endforeach;?>
-                        </div>
+                             <?php endforeach;?>
+                    </div>
                     </div>
                 </div>
             </div>
