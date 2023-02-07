@@ -30,6 +30,13 @@
                             <button class="btn btn-panel waves-effect waves-themed" data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10" data-original-title="Fullscreen"></button>
                         </div>
                     </div>
+                    <?php
+                    $pdo = new PDO("mysql:host=localhost;dbname=qweqwe;","root", "" );
+                    $statement = $pdo->prepare("select * from users");
+                    $statement-> execute();
+                    $tasks =$statement-> fetchall(PDO::FETCH_ASSOC);
+
+                    ?>
                     <div class="panel-container show">
                         <div class="panel-content">
                             <h5 class="frame-heading">
@@ -38,6 +45,10 @@
                             <div class="frame-wrap">
                                 <table class="table m-0">
                                     <thead>
+
+
+
+
                                         <tr>
                                             <th>#</th>
                                             <th>First Name</th>
@@ -47,50 +58,20 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php foreach ($tasks as $task):?>
+
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
+                                            <th scope="row"><?php echo $task['id'];?></th>
+                                            <td><?php echo $task['first_name'];?></td>
+                                            <td><?php echo $task['last_name'];?></td>
+                                            <td><?php echo $task['username'];?></td>
                                             <td>
                                                 <a href="show.php?id=" class="btn btn-info">Редактировать</a>
                                                 <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
                                                 <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Larry the Bird</td>
-                                            <td> Bird</td>
-                                            <td>@twitter</td>
-                                            <td>
-                                                <a href="show.php?id=" class="btn btn-info">Редактировать</a>
-                                                <a href="edit.php?id=" class="btn btn-warning">Изменить</a>
-                                                <a href="delete.php?id=" class="btn btn-danger">Удалить</a>
-                                            </td>
-                                        </tr>
+                                    <?php endforeach;?>
                                     </tbody>
                                 </table>
                             </div>
