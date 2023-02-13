@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();
+$pdo = new PDO("mysql:host=localhost;dbname=my_project;", "root","");
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -36,8 +40,9 @@
                     <div class="panel-content">
                         <div class="form-group">
                             <form action="save_10.php" method="post">
+                                <h1><?php echo $_SESSION['success']; ?></h1>
                                 <label class="form-label" for="simpleinput">Text</label>
-                                <input type="text" id="simpleinput" class="form-control" name="email">
+                                <input type="text" id="simpleinput" class="form-control" name="text">
                                 <button class="btn btn-success mt-3" type="submit">Submit</button>
                             </form>
                         </div>

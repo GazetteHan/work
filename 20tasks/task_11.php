@@ -19,7 +19,6 @@
     </head>
     <body class="mod-bg-1 mod-nav-link ">
         <main id="js-page-content" role="main" class="page-content">
-
             <div class="col-md-6">
                 <div id="panel-1" class="panel">
                     <div class="panel-hdr">
@@ -35,10 +34,14 @@
                         <div class="panel-content">
                             <div class="panel-content">
                                 <div class="form-group">
-                                    <form action="">
+                                    <div class="alert alert-danger fade show" role="alert">
+                                        You should check in on some of those fields below.
+                                    </div>
+                                    <form action="save_11.php" method="post">
                                         <label class="form-label" for="simpleinput">Text</label>
-                                        <input type="text" id="simpleinput" class="form-control">
-                                        <button class="btn btn-success mt-3">Submit</button>
+                                        <input type="text" id="simpleinput" class="form-control"
+                                        name="text">
+                                        <button class="btn btn-success mt-3" type="submit"> Submit</button>
                                     </form>
                                 </div>
                             </div>

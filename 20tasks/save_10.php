@@ -1,27 +1,15 @@
 <?php
 session_start();
-var_dump($_POST);
+$text = $_POST["text"];
 
-$email = $_POST["email"];
-$password = $_POST["password"];
-$pdo = new PDO("mysql:host=localhost;dbname=tasks", "root", "");
+$pdo = new PDO("mysql:host=localhost;dbname=my_project;", "root","");
+$sql = "INSERT INTO my_table (text) VALUES (:text)";
 
-$sql = "SELECT * FROM task_10 WHERE email=:email";
-$statement = $pdo->prerame($sql);
-$statement->execute(["email"=> $email]);
-$user = $statement->fetch(mode PDO::FETCH_ASSOC);
-// var_dump($user);
-
-if(!empty($user)){
-$massage = "Введенная электроная почта уже занята попробуйте другима";
-$_SESSION["message"] = $massage;
-
-header('location: task_10.php');
-exit;
-
-}
-
-$sql = "INSERT INFO save_10.php (email, password) VALUES (:email, :password)";
 $statement = $pdo->prepare($sql);
-$statement->execute(["email" =>$email, "password" =>$password]);
-header('location: task_10.php');
+$statement->execute(["text" => $text]);
+
+$message = $text;
+$_SESSION['success'] = $message;
+var_dump($_SESSION);
+
+/header("location: /20tasks/task_10.php");
