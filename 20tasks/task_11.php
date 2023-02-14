@@ -37,7 +37,7 @@
                                     <div class="alert alert-danger fade show" role="alert">
                                         You should check in on some of those fields below.
                                     </div>
-                                    <form action="save_11.php" method="post">
+                                    <form action="Saves/save_11.php" method="post">
                                         <label class="form-label" for="simpleinput">Text</label>
                                         <input type="text" id="simpleinput" class="form-control"
                                         name="text">

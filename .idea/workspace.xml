@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9769205c-ce8a-4c6e-9bb8-5ab51291fc49" name="Changes" comment="" />
+    <list default="true" id="9769205c-ce8a-4c6e-9bb8-5ab51291fc49" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/20tasks/Saves/save_12.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/20tasks/task_19v2.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/20tasks/upload.v2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/20tasks/save_10.php" beforeDir="false" afterPath="$PROJECT_DIR$/20tasks/Saves/save_10.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/20tasks/save_11.php" beforeDir="false" afterPath="$PROJECT_DIR$/20tasks/Saves/save_11.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/20tasks/save_task.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/20tasks/task_10.php" beforeDir="false" afterPath="$PROJECT_DIR$/20tasks/task_10.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/20tasks/task_11.php" beforeDir="false" afterPath="$PROJECT_DIR$/20tasks/task_11.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/20tasks/task_12.html" beforeDir="false" afterPath="$PROJECT_DIR$/20tasks/task_12.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,6 +56,7 @@
       <recent name="C:\OSPanel\domains\php.loc\works.loc\20 tasks" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OSPanel\domains\work.loc\20tasks\Saves" />
       <recent name="C:\OSPanel\domains\work.loc\20 tasks" />
     </key>
   </component>
@@ -63,7 +75,8 @@
       <workItem from="1675842925198" duration="17535000" />
       <workItem from="1675926079234" duration="4488000" />
       <workItem from="1676269880571" duration="2350000" />
-      <workItem from="1676273691813" duration="250000" />
+      <workItem from="1676273691813" duration="10919000" />
+      <workItem from="1676372199341" duration="1656000" />
     </task>
     <servers />
   </component>

@@ -39,7 +39,7 @@ $pdo = new PDO("mysql:host=localhost;dbname=my_project;", "root","");
                 <div class="panel-content">
                     <div class="panel-content">
                         <div class="form-group">
-                            <form action="save_10.php" method="post">
+                            <form action="Saves/save_10.php" method="post">
                                 <h1><?php echo $_SESSION['success']; ?></h1>
                                 <label class="form-label" for="simpleinput">Text</label>
                                 <input type="text" id="simpleinput" class="form-control" name="text">
