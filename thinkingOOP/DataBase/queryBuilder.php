@@ -12,11 +12,9 @@ class queryBuilder
 
     function getAllPosts()
     {
-
-
-        $statement = $this->pdo->prepare("SELECT * FROM posts");
+        $statement = $this->pdo->prepare("SELECT * FROM `posts`");
         $statement->execute(); //ПОЛУЧИТЬ РЕЗУЛЬТАТ
-        $posts = $statement->fetchAll(PDO::FETCH_ASSOC); //ПЕРЕДАЕМ ДАННЫЕ В ПЕРЕМЕННУЮ USER
+        dd($statement->fetchAll(PDO::FETCH_ASSOC)); //ПЕРЕДАЕМ ДАННЫЕ В ПЕРЕМЕННУЮ USER
         return $posts;
     }
 }

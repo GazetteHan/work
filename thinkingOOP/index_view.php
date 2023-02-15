@@ -49,7 +49,8 @@
                     <tbody>
 
 
-                    <?php foreach ($posts as $index => $post) { ?>
+                    <?php
+                    foreach ($posts as $index => $post) { ?>
                         <tr>
                             <th scope="row"><?php echo $post["id"]; ?></th>
                             <td><?php echo $post["title"]; ?></td>

@@ -1,13 +1,8 @@
 <?php
 include "function.php";
-include "DataBase/queryBuilder.php";
-include "DataBase/make.php";
+$db = include "DataBase/start.php";
+$posts = $db->getAllPosts("posts");
 
-$pdo = Connection::Make();
-
-$db = new queryBuilder($pdo);
-$posts = $db->getAllPosts();
-//dd($posts);
 
 include "index_view.php";
-?>
+
