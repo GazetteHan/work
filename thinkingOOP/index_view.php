@@ -1,4 +1,13 @@
 <!doctype html>
+<?php
+include "function.php";
+$db = include "database/start.php";
+$posts = $db->getAll("posts");
+
+
+
+
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
