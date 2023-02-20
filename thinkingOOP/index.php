@@ -1,8 +1,8 @@
 <?php
 include "function.php";
-$db = include "DataBase/start.php";
-$posts = $db->getAllPosts("posts");
+$db = include "database/start.php";
 
-
+$posts = $db->getAll("posts");
 include "index_view.php";
+?>
 
