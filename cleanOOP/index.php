@@ -7,6 +7,7 @@ include_once "Input.php";
 include_once "Token.php";
 include_once "Session.php";
 include_once "User.php";
+include_once "Redirect.php";
 
 //Database::getInstance()->insert('users', [
 //	'username' => 'Marlin',
@@ -74,13 +75,17 @@ if (Input::exists()) {
 		//	var_dump($validation->errors());
 
 		if ($validation->passed()) {
+
+
             $users = new User;
 
             $users->create([
                     'username' => Input::get('username'),
-                    'password' => Input::get('password')
+                    'password' => password_hash(Input::get('password'), PASSWORD_DEFAULT)
             ]);
+
             Session::flash('success', 'register success');
+            Redirect::to(404);
 		} else {
 			foreach ($validation->errors() as $error) {
 				echo $error . '<br>';
@@ -94,6 +99,7 @@ if (Input::exists()) {
 
 
 <form action="" method="post">
+<!--    --><?php //echo Session::flash('success', 'regi')?>
 	<div class="field">
 		<label for="username">Username</label>
 		<input type="text" name="username" value="<?php echo Input::get('username'); ?>">
