@@ -38,6 +38,11 @@ class Validate
                                 $this->addError("{$item} already exist.");
                             }
                             break;
+                        case 'email':
+                            if (!filter_var($value, FILTER_VALIDATE_EMAIL)){
+                                $this->addError("{$item} is not an email");
+                            }
+                            break;
                     }
                 }
             }
