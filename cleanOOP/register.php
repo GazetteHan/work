@@ -29,7 +29,7 @@ if (Input::exists()) {
 
         //	var_dump($validation->errors());
 
-        if ($validation->passed()) {
+        if ($validate->passed()) {
 
             $user = new User();
             $user->create([
@@ -38,8 +38,9 @@ if (Input::exists()) {
                 'password' => password_hash(Input::get('password'), PASSWORD_DEFAULT)
             ]);
 
-            Session::flash('success', 'user register done');
+            Session::flash('success', 'register success');
             //			header('Location: test.php');
+            Redirect::to('login.php');
         } else {
             foreach ($validation->errors() as $error) {
                 echo $error . '<br>';
