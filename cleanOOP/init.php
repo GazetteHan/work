@@ -28,3 +28,4 @@ $GLOBALS["config"] = [
         'token_name' => 'token',
     ]
 ];
+$users = Database::getInstance()->get('users',['username','=','test']);

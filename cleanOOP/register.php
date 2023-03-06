@@ -1,5 +1,5 @@
 <?php
-require_once 'init.php';
+require_once "init.php";
 
 if (Input::exists()) {
     if (Token::check(Input::get('token'))) {
@@ -9,11 +9,11 @@ if (Input::exists()) {
                 'required' => true,
                 'min'      => 2,
                 'max'      => 15,
-
+                'unique'   => 'users'
             ],
-            'email' =>[
-                    'required' => true,
-                'email' => true,
+            'email'          => [
+                'required' => true,
+                'email'    => true,
                 'unique'   => 'users'
             ],
             'password'       => [
@@ -25,37 +25,21 @@ if (Input::exists()) {
                 'matches'  => 'password'
             ],
         ]);
-        $users = Database::getInstance()->get('users', ['id', '=', '1']);
-//Database::getInstance()->delete('users', ['username', '=', 'name2']);
-
-
-//if ($users->error()) {
-//	echo "This Error";
-//} else {
-//	foreach ($users->result() as $user) {
-//		echo $user["id"] . ". " . $user["username"] . "<br>";
-//		//		echo $user . "<br>";
-//	}
-//}
-
-
 
 
         //	var_dump($validation->errors());
 
         if ($validation->passed()) {
 
-
-            $users = new User;
-
-            $users->create([
+            $user = new User();
+            $user->create([
                 'username' => Input::get('username'),
-                'password' => password_hash(Input::get('password'), PASSWORD_DEFAULT),
-                'email' => Input::get('email')
+                'email'    => Input::get('email'),
+                'password' => password_hash(Input::get('password'), PASSWORD_DEFAULT)
             ]);
 
-            Session::flash('success', 'register success');
-            Redirect::to(404);
+            Session::flash('success', 'user register done');
+            //			header('Location: test.php');
         } else {
             foreach ($validation->errors() as $error) {
                 echo $error . '<br>';
@@ -64,34 +48,31 @@ if (Input::exists()) {
     }
 
 }
+
 ?>
 
 
 <form action="" method="post">
-        <?php echo Session::flash('success');?>
+    <?php echo Session::flash('success'); ?>
     <div class="field">
         <label for="username">Username</label>
         <input type="text" name="username" value="<?php echo Input::get('username'); ?>">
     </div>
     <div class="field">
         <label for="email">Email</label>
-        <input type="text" name="email" value="<?php echo Input::get('email')?>">
+        <input type="text" name="email" value="<?php echo Input::get('email'); ?>">
     </div>
     <div class="field">
         <label for="password">Password</label>
         <input type="text" name="password">
     </div>
-
     <div class="field">
         <label for="password_again">Password again</label>
         <input type="text" name="password_again">
     </div>
-    <input type="hidden" name="token" value="<?php echo Token::generate() ?>">
+    <input type="hidden1" name="token" value="<?php echo Token::generate() ?>">
 
     <div class="field">
         <button type="submit">Submit</button>
-
-
-
     </div>
 </form>
