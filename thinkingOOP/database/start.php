@@ -1,7 +1,7 @@
 <?php
-$config = include "config.php";
-include "database/Connection.php";
-include "database/queryBuilder.php";
+$config = include "thinkingOOP/config.php";
+include "thinkingOOP/database/Connection.php";
+include "thinkingOOP/database/queryBuilder.php";
 
 
 $result = new QueryBuilder(Connection::make($config["database"]));

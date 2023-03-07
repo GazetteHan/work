@@ -1,8 +1,8 @@
 <?php
 
-include "../function.php";
+include "thinkingOOP/function.php";
 
-$db = include_once "../database/start.php";
+$db = include_once "thinkingOOP/database/start.php";
 $posts = $db->getAll("posts");
 
-include "../index_view.php";
+include "thinkingOOP/index_view.php";
