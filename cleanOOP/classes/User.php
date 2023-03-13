@@ -1,8 +1,7 @@
 <?php
 
-class User
-{
-    private $db, $data, $session_name, $isLoggedIn, $cookieName;
+class User{
+    private $db, $data, $session_name, $isLoggedIn;
 
     public function __construct($user = null) {
         $this->db = Database::getInstance();
@@ -24,8 +23,8 @@ class User
         }
     }
 
-    public function create($fields = []) {
-        $this->db->insert('users', $fields);
+    public function create($fields = []){
+        $this->db->insert('users', $fields) ;
     }
 
     public function login($email = null, $password = null, $remember = false) {
@@ -61,31 +60,39 @@ class User
         return false;
     }
 
-    public function find($value = null) {
-//		var_dump($value);
-        if (is_numeric($value)) {
+    public function find($value = null){
+        if (is_numeric($value)){
             $this->data = $this->db->get('users', ['id', '=', $value])->first();
-        } else {
+        }else{
             $this->data = $this->db->get('users', ['email', '=', $value])->first();
         }
-
-        if ($this->data) {
+        if ($this->data){
             return true;
         }
-
         return false;
     }
 
-    public function data() {
+    public function data(){
         return $this->data;
     }
 
-    public function isLoggedIn() {
+    public function isLoggedIn(){
         return $this->isLoggedIn;
     }
 
-    public function logout() {
+    public function logout(){
         Cookie::delete($this->cookieName);
         return Session::delete($this->session_name);
+    }
+
+    public function exists(){
+        return (!empty($this->data())) ? true : false;
+    }
+
+    public function update($fields = [], $id = null){
+        if (!$id && $this->isLoggedIn()){
+            $id = $this->data()->id;
+        }
+        $this->db->update('users', $id, $fields);
     }
 }

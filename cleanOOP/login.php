@@ -1,6 +1,6 @@
 <?php
 require_once "init.php";
-
+//var_dump($_SESSION);
 if (Input::exists()) {
     if (Token::check(Input::get('token'))) {
         $validate = new Validate();
@@ -45,7 +45,7 @@ if (Input::exists()) {
     </div>
     <div class="field">
         <input type="checkbox" name="remember" id="remember">
-        <label for="remember">Remember</label>
+        <label for="remember">Remember me</label>
     </div>
     <input type="hidden" name="token" value="<?php echo Token::generate() ?>">
 
