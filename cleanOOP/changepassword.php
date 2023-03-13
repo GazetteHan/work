@@ -1,30 +1,36 @@
 <?php
+require_once "init.php";
 
-session_start();
-
-include_once 'init.php';
-
-$user = new User;
-
+$user = new User();
 $validate = new Validate();
 
-$validate->check($_POST, [
-    'current_password' => ['required' => true, ' min' => 6],
-    'new_password' => ['required' => true, 'min' => 6],
-    'new_password_again' => ['required' => true, 'min' => 6, 'matches' => 'new_password'],
-]);
+$validate->check($_POST,
+    [
+        'current_password'   => [
+            'required' => true, 'min' => 2
+        ],
+        'new_password'       => [
+            'required' => true, 'min' => 2,
+        ],
+        'new_password_again' => [
+            'required' => true, 'min' => 2, 'matches' => 'new_password',
+        ],
+    ]
+);
+if (Input::exists()) {
+    if (Token::check(Input::get('token'))) {
+        if ($validate->passed()) {
 
-if (Input::exists()){
-    if (Token::check(Input::get('token'))){
-        if ($validate->passed()){
-            if (password_verify(Input::get('current_password'), $user->data()->password)){
+            if (password_verify(Input::get('current_password'), $user->data()->password)) {
                 $user->update(['password' => password_hash(Input::get('new_password'), PASSWORD_DEFAULT)]);
-                Session::flash('success', 'Пароль обновлён.');
-                Redirect::to('index.php');
-            }else{
-                echo 'Пароль не верный';
+                Session::flash('success', 'Password has been updated.');
+                Redirect::to("index.php");
+//				exit();
+            } else {
+                echo "Invalid current password";
             }
-        }else{
+
+        } else {
             foreach ($validate->errors() as $error) {
                 echo $error . '<br>';
             }
@@ -32,26 +38,27 @@ if (Input::exists()){
     }
 }
 
-?>
 
+//echo Session::flash('success');
+?>
 
 <form action="" method="post">
     <div class="field">
-        <label for="username">Введите пароль</label>
+        <label for="current_password">Текущий парль</label>
         <input type="text" name="current_password" id="username" value="">
     </div>
     <div class="field">
-        <label for="username">Новый пароль</label>
-        <input type="text" name="new_password" id="username" value="">
+        <label for="new_password">Новый пароль</label>
+        <input type="text" name="new_password" value="">
     </div>
     <div class="field">
-        <label for="username">Повторите пароль</label>
-        <input type="text" name="new_password_again" id="username" value="">
+        <label for="new_password_again">Повторите пароль</label>
+        <input type="text" name="new_password_again" value="">
     </div>
 
     <div class="field">
         <button type="submit">Submit</button>
     </div>
 
-    <input type="hidden" name="token" value="<?php echo Token::generate();?>">
+    <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
 </form>
