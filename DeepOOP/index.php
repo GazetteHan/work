@@ -1,11 +1,11 @@
 <?php
 require '../DeepOOP/vendor/autoload.php';
+require "app/QueryBuilder.php";
 
 
-use Aura\SqlQuery\QueryFactory;
 
-use App\QueryBuilder();
 
+use App\QueryBuilder;
 $db = new QueryBuilder();
-
-var_dump();
+$result = $db->getAll();
+var_dump($result);

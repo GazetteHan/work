@@ -1,6 +1,10 @@
 <?php
 
 namespace App;
+
+use Aura\SqlQuery\QueryFactory;
+
+use PDO;
 class QueryBuilder{
     public function getAll(){
         $queryFactory = new QueryFactory('mysql');
@@ -8,7 +12,7 @@ class QueryBuilder{
             //var_dump($queryFactory);
 
         $select = $queryFactory->newSelect();
-        $select->cols(['*'])->from('post');
+        $select->cols(['*'])->from('posts');
 
             //var_dump($select->getStatement());
         $pdo = new PDO("mysql:host=localhost;dbname=app3", "root", "");
