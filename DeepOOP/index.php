@@ -1,11 +1,8 @@
 <?php
-require '../DeepOOP/vendor/autoload.php';
-require "app/QueryBuilder.php";
+require_once "vendor/autoload.php";
 
+if ($_SERVER['REQUEST_URI'] == '/php/marlin/deepOOP/public/home') {
+    require 'app/controlles/homepage.php';
+}
 
-use App\QueryBuilder;
-
-
-$db = new QueryBuilder();
-$result = $db->getAll('posts');
-var_dump($result);
+exit();
