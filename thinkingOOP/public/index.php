@@ -3,7 +3,7 @@
 include "../function.php";
 dd($result = $_SERVER['REQUEST_URI']);
 $routes = [
-    "/thinkingOOP/" => 'function/homepage.php',
+    "/thinkingOOP/" => 'function/HomeController.php',
     "/thinkingOOP/about" => 'function/about.php'
 ];
 $rout = $_SERVER['REQUEST_URI'];
