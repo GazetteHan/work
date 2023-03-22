@@ -9,9 +9,9 @@ require_once "../vendor/autoload.php";
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/DeepOOP/public/users', ['App\controllers\HomeController', 'index']);
     // {id} must be a number (\d+) //user/1
-    $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
-    // The /{title} suffix is optional
-    $r->addRoute('GET', '/articles/{id:\d+}[/{title}]', 'get_article_handler');
+// $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
+// The /{title} suffix is optional
+// $r->addRoute('GET', '/articles/{id:\d+}[/{title}]', 'get_article_handler');
 });
 
 // Fetch method and URI from somewhere
@@ -42,6 +42,5 @@ switch ($routeInfo[0]) {
         d($handler[0]);
         $controller = new $handler[0];
         call_user_func([$controller, $handler[1]], $vars);
-        // ... call $handler with $vars
         break;
 }
