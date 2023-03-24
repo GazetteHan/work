@@ -14,10 +14,20 @@ $array = [
 Arr::pluck($array, 'marlin.course');
 //var_dump($result);
 
+if (!session_id() )@session_start();
+
+
+
+
+
+
+
+
+
 
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/DeepOOP/home', ['App\controllers\HomeController', 'index']);
-    $r->addRoute('GET', '/DeepOOP/about', ['App\controllers\HomeController', 'about']);
+    $r->addRoute('GET', '/DeepOOP/about/{amount:\d+}', ['App\controllers\HomeController', 'about']);
     // {id} must be a number (\d+) //user/1
 // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
 // The /{title} suffix is optional
