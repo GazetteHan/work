@@ -3,11 +3,21 @@ if( !session_id() ) {session_start();}
 
 require_once "../vendor/autoload.php";
 
+use Illuminate\Support\Arr;
 
 //d($_SERVER);
 
+$array = [
+    ["marlin" => ["course" => "HTML"]],
+    ["marlin" => ["course" => "PHP"]]
+];
+Arr::pluck($array, 'marlin.course');
+//var_dump($result);
+
+
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
-    $r->addRoute('GET', '/DeepOOP/public/users', ['App\controllers\HomeController', 'index']);
+    $r->addRoute('GET', '/DeepOOP/home', ['App\controllers\HomeController', 'index']);
+    $r->addRoute('GET', '/DeepOOP/about', ['App\controllers\HomeController', 'about']);
     // {id} must be a number (\d+) //user/1
 // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
 // The /{title} suffix is optional
@@ -41,6 +51,7 @@ switch ($routeInfo[0]) {
         $vars = $routeInfo[2];
         d($handler[0]);
         $controller = new $handler[0];
+//        d($controller);
         call_user_func([$controller, $handler[1]], $vars);
         break;
 }

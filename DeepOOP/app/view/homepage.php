@@ -1,7 +1,9 @@
 <?php
-$this->layout('layout', ['title' => 'User Profile','name'=>'']);echo zxc;
+$this->layout('layout', ['title' => 'User Profile','name'=>'']);
 
 ?>
 
 <h1>User Profile</h1>
-<p>Hello, <?=$this->e($name)?></p>/p>
+<?php foreach ($postsInView as $post):?>
+<?php echo $post['title'];?> <br>
+<?php endforeach;?>

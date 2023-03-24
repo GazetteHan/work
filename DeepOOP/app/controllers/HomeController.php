@@ -4,25 +4,33 @@
 namespace App\controllers;
 
 use App\QueryBuilder;
-
+use League\Plates\Engine;
 
 
 class HomeController{
+
+    private $templates;
+
+    public function __construct()
+    {
+        $this->templates = new Engine('../app/view');
+    }
+
     public function index($vars){
-        d($vars);
 
         $db = new QueryBuilder();
 
+        $posts = $db->getALL('posts');
+        echo $this->templates->render('homepage', ['postsInView' => $posts]);
 
-        $result = $db->getAll('posts');
 
-        //var_dump($result);
-        $db->update([
-            'title' => 'test update',],9,'posts');
-
-        echo 'homepage';
+// Render a template
+//        echo $this->templates->render('about', ['name' => 'zxcursed']);
     }
+    public function about($vars){
 
+        echo $this->templates->render('about', ['name'=> 'zxc about page']);
+    }
 
 
 }
