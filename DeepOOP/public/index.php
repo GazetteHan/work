@@ -13,7 +13,7 @@ if( !session_id() ) {session_start();}
 require_once "../vendor/autoload.php";
 
 use Illuminate\Support\Arr;
-use \Tamtamchik\SimpleFlash\Flash;
+use Tamtamchik\SimpleFlash\Flash;
 
 //d($_SERVER);
 
@@ -24,12 +24,12 @@ $array = [
 Arr::pluck($array, 'marlin.course');
 //var_dump($result);
 
-if( !session_id() ) {
-    session_start();
-}
+//if( !session_id() ) {
+//    session_start();
+//}
 
 
-
+//use app\controllers\HomeController;
 
 
 $flash = new Flash();
@@ -72,7 +72,8 @@ switch ($routeInfo[0]) {
         $vars = $routeInfo[2];
         d($handler[0]);
         $controller = new $handler[0];
-        d($controller);
+//        d($controller);die();
+//        d($controller);
         call_user_func([$controller, $handler[1]], $vars);
         break;
 }

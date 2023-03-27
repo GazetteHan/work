@@ -39,12 +39,7 @@ class HomeController{
             $this->withdraw($vars['amount']);
         }catch (\Exception $exception){
             flash()->error($exception->getMessage());
-
-
-//            flash()->error($exception->getMessage());
         }
-
-
         echo $this->templates->render('about', ['name'=> 'zxc about page']);
     }
     public function withdraw($amount = 1){
