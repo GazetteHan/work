@@ -10,3 +10,4 @@ foreach ($postInView as $item) {
     echo $item["title"] . "<br>";
 };
 ?>
+
