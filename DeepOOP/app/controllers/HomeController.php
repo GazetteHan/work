@@ -31,6 +31,8 @@ class HomeController{
 // Render a template
 //        echo $this->templates->render('about', ['name' => 'zxcursed']);
     }
+
+
     public function about($vars){
 
         try {

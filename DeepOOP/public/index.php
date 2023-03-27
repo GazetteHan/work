@@ -76,3 +76,5 @@ switch ($routeInfo[0]) {
         call_user_func([$controller, $handler[1]], $vars);
         break;
 }
+
+

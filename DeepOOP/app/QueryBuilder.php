@@ -24,6 +24,7 @@ class QueryBuilder{
         return $result;
     }
 
+
     public function insert($data,$table)
     {
         $insert = $this->queryFactory->newInsert();
