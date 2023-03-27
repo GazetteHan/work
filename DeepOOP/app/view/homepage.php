@@ -1,9 +1,12 @@
+<?php $this->layout('layout',
+    [
+        'title' => 'User Profile 2',
+        'type'  => 'this is category'
+    ]); ?>
+
 <?php
-$this->layout('layout', ['title' => 'User Profile','name'=>'']);
 
+foreach ($postInView as $item) {
+    echo $item["title"] . "<br>";
+};
 ?>
-
-<h1>User Profile</h1>
-<?php foreach ($postsInView as $post):?>
-<?php echo $post['title'];?> <br>
-<?php endforeach;?>

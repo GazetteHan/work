@@ -4,7 +4,11 @@
 namespace App\controllers;
 
 use App\QueryBuilder;
+//use http\Exception;
 use League\Plates\Engine;
+use function Tamtamchik\SimpleFlash\flash;
+
+//use Tamtamchik\SimpleFlash\Flash;
 
 
 class HomeController{
@@ -21,7 +25,7 @@ class HomeController{
         $db = new QueryBuilder();
 
         $posts = $db->getALL('posts');
-        echo $this->templates->render('homepage', ['postsInView' => $posts]);
+        echo $this->templates->render('homepage', ['postInView' => $posts]);
 
 
 // Render a template
@@ -31,8 +35,11 @@ class HomeController{
 
         try {
             $this->withdraw($vars['amount']);
-        }catch (Exception $exception){
+        }catch (\Exception $exception){
             flash()->error($exception->getMessage());
+
+
+//            flash()->error($exception->getMessage());
         }
 
 
@@ -42,7 +49,7 @@ class HomeController{
         $total =10;
 
         if ($amount > $total) {
-            throw new Exception("Недостаточно средств");
+            throw new \Exception("Недостаточно средств");
         }
     }
 

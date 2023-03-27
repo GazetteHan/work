@@ -5,4 +5,4 @@ echo 'index';
 
 $templates = new \League\Plates\Engine('app/view');
 
-echo $templates->render('homepage', ['name' => 'UWU']);
+echo $templates->render('homepage', ['name' => 'QWE']);
