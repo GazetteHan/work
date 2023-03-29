@@ -29,7 +29,7 @@ class HomeController{
 
 
 // Render a template
-//        echo $this->templates->render('about', ['name' => 'zxcursed']);
+//        echo $this->templates->render('about', ['name' => '']);
     }
 
 
