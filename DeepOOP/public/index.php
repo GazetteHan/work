@@ -35,10 +35,12 @@ Arr::pluck($array, 'marlin.course');
 $flash = new Flash();
 $flash->display();
 $flash->error('error');
-
+//{amount:\d+}
 $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/DeepOOP/home', ['App\controllers\HomeController', 'index']);
-    $r->addRoute('GET', '/DeepOOP/about {amount:\d+}', ['App\controllers\HomeController', 'about']);
+    $r->addRoute('GET', '/DeepOOP/about ', ['App\controllers\HomeController', 'about']);
+    $r->addRoute('GET', '/php/marlin/deepOOP/public/verification', ['App\controllers\HomeController', 'email_verification']);
+    $r->addRoute('GET', '/php/marlin/deepOOP/public/login', ['App\controllers\HomeController', 'login']);
     // {id} must be a number (\d+) //user/1
 // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
 // The /{title} suffix is optional
@@ -70,16 +72,13 @@ switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
-        echo '123';
-        d($vars);
-        d($handler);
         $controller = new $handler[0];
-        d($controller);die();
-//        d($controller);
+
         call_user_func([$controller, $handler[1]], $vars);
+
+
         break;
 }
-
 
 
 
