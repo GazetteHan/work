@@ -15,7 +15,7 @@ class HomeController
     private $userName;
 
     public function __construct() {
-        $this->templates = new Engine('../app/views');
+        $this->templates = new Engine('../app/view');
         $db = new QueryBuilder();
         $this->auth = new \Delight\Auth\Auth($db->pdo);
 
@@ -28,6 +28,9 @@ class HomeController
         echo $this->templates->render('homepage', ['postInView' => $posts]);
 
         echo $this->auth->getUsername();
+    }
+    public function faker($vars = null) {
+        echo 123;
     }
 
     public function about($vars = null) {
