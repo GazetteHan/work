@@ -1,12 +1,31 @@
 <?php
 require_once '../vendor/autoload.php';
 
-// use the factory to create a Faker\Generator instance
+use Aura\SqlQuery\QueryFactory;
+use JasonGrimes\Paginator;
+use Faker\Factory;
+
+
 $faker = Faker\Factory::create();
-// generate data by calling methods
-echo $faker->name();
-// 'Vince Sporer'
-echo $faker->email();
-// 'walter.sophia@hotmail.com'
-echo $faker->text();
-// 'Numquam ut mollitia at consequuntur inventore dolorem.'
+
+
+$pdo = new PDO("mysql:host=localhost;dbname=app3;", "root", "");
+$queryFactory = new QueryFactory('mysql');
+
+$insert = $queryFactory->newInsert();
+
+echo $title = $faker->jobTitle();
+echo $content = $faker->text();
+
+$insert->into('posts');
+for ($i = 0; $i < 30; $i++){
+    $insert->cols([
+        'title' => $title,
+        'content' => $content,
+    ]);
+    $insert->addRow();
+}
+
+$sth = $pdo->prepare($insert->getStatement());
+$sth->execute($insert->getBindValues());
+

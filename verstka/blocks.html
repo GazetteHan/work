@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="centerBlock">
+
+    <div class="allBlock">
+
+    <div class="block1">1
+     <div class="point_1"></div>
+    <div class="point1"></div>
+    </div>
+
+    <div class="block2">2
+        <div class="point_2"></div>
+    <div class="point2"></div>
+    </div>
+
+    <div class="block3">3
+        <div class="point_3"></div>
+    <div class="point3"></div>
+    </div>
+
+    </div>
+
+</div>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .centerBlock{
+        /*padding: 25px;*/
+        /*position: fixed;*/
+        /*top: 50%;*/
+        /*left: 50%;*/
+        /*transform: translate(50%, -50%);*/
+        /*background: #319ef6;*/
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .allBlock{
+        width: 600px;
+        height: 350px;
+        background-color: #a14848;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .block1, .block2, .block3{
+        text-align: center;
+        vertical-align: middle;
+        line-height: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        position: relative;
+    }
+
+    .point1, .point2, .point3{
+        height: 20px;
+        width: 20px;
+        background-color: #0a6ebd;
+        border-radius: 50%;
+        position: absolute;
+        top: -10px;
+        left: -10px;
+    }
+    .point_1, .point_2, .point_3{
+        height: 20px;
+        width: 20px;
+        background-color: #7b0abd;
+        border-radius: 50%;
+        position: absolute;
+        top: 90px;
+        left: 90px
+    }
+
+
+</style>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js">
+
+</script>
+</body>
+</html>

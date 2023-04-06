@@ -7,7 +7,8 @@
     "illuminate/support": "^8.83",
     "tamtamchik/simple-flash": "^3.0",
     "delight-im/auth": "^8.3",
-    "fakerphp/faker": "^1.21"
+    "fakerphp/faker": "^1.21",
+    "jasongrimes/paginator": "^1.0"
   },
   "autoload": {
     "psr-4": {

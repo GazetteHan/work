@@ -41,7 +41,7 @@ $dispatcher = FastRoute\simpleDispatcher(function (FastRoute\RouteCollector $r) 
     $r->addRoute('GET', '/DeepOOP/about ', ['App\controllers\HomeController', 'about']);
     $r->addRoute('GET', '/php/marlin/deepOOP/public/verification', ['App\controllers\HomeController', 'email_verification']);
     $r->addRoute('GET', '/php/marlin/deepOOP/public/login', ['App\controllers\HomeController', 'login']);
-    $r->addRoute('GET', '/DeepOOP/faker', ['App\controllers\HomeController', 'faker']);
+//    $r->addRoute('GET', '/DeepOOP/faker', ['App\controllers\HomeController', 'faker']);
     // {id} must be a number (\d+) //user/1
 // $r->addRoute('GET', '/user/{id:\d+}', 'get_user_handler');
 // The /{title} suffix is optional
