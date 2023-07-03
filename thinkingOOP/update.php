@@ -4,5 +4,5 @@ $db = include "database/start.php";
 $id = $_GET["id"];
 $post = $db->update("posts",$_POST, $id);
 
-header("Location: index.php");
+header("Location: main.php");
 ?>

@@ -20,7 +20,7 @@ if (Input::exists()) {
 
             $login = $user->login(Input::get('email'), Input::get('password'), $remember);
 
-            Redirect::to("index.php");
+            Redirect::to("main.php");
 
         } else {
             foreach ($validation->errors() as $error) {

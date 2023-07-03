@@ -26,6 +26,7 @@ class QueryBuilder
         $result = $sth->fetchAll(PDO::FETCH_ASSOC);
         return $result;
 
+
     }
 
     public function insert($data, $table) {

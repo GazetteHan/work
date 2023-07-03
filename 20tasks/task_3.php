@@ -33,6 +33,13 @@
                     <?php
                         $elements =[
                                 [
+                                        "title" => "НАтуральность Жеки",
+                                        "value" => "0 / 10",
+                                        "background" => "bg-info-400",
+                                        "progress_bar" =>"10"
+                                ],
+
+                                [
                                         "title" => "Мои задачи",
                                         "value" => "7 / 10",
                                         "background" => "bg-fusion-400",

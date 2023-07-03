@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0,0,0,.700), rgba(0,0,0,.700)), url("img/Colored Shapes.svg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+}
+
+header nav {
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #45559d;
+    padding: 0 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+header .logo {
+    font-size: 1.5rem;
+    color: #000309;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+nav ul li {
+    position: relative;
+    float: left;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+    color: #000000;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: black;
+    color: white;
+}
+
+nav ul li ul {
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    background: #ffffff;
+    display: none;
+}
+
+nav ul li ul li {
+    width: 100%;
+    border: 1px solid rgba(0,0,0,.1);
+}
+
+nav ul li:hover > ul {
+    display: initial;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+p {
+    color: #f6f3f3;
+    margin: 0 20px;
+    line-height: 1.5;
+}
+section {
+    margin: 40px 0;
+}
+
+img {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+section ul li {
+    color: white;
+}
+section {
+
+    color: white;
+}
+.background-text {
+    background-color: #2b2d30;
+    padding: 10px;
+}

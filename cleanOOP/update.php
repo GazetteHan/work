@@ -19,7 +19,7 @@ if (Input::exists()){
         if ($validate->passed()){
             $user->update([
                 'username' => Input::get('username')]);
-            Redirect::to('index.php');
+            Redirect::to('main.php');
         }else{
             foreach ($validate->errors() as $error) {
                 echo $error . '<br>';
