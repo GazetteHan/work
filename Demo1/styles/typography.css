@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+/*
+  Ссылка на шрифт Roboto 
+  используется две жирности шрифта 400 (normal) и 700 (bold)
+*/
+
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+.typography_h1 {
+  font-size: 80px;
+  line-height: 88px;
+  font-weight: bold;
+}
+
+.typography_h2 {
+  font-size: 50px;
+  line-height: 56px;
+  font-weight: 700;
+}
+
+.typography_h4 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.typography_p1 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.typography_p2 {
+  font-size: 16px;
+  line-height: 20px;
+}

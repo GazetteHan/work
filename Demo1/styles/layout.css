@@ -1,0 +1,35 @@
+.layout {
+  width: 100%;
+  min-width: 1128px;
+}
+
+.layout__head {
+  height: 72px;
+  background: radial-gradient(
+      182.66% 2461.3% at -37.15% -104.17%,
+      #14213d 0%,
+      var(--color-lightblue) 100%
+    ),
+    var(--color-lightblue);
+}
+
+.layout__main {
+  width: 100%;
+  min-height: calc(100vh - 72px - 144px);
+}
+
+.layout__footer {
+  width: 100%;
+  height: 144px;
+  background-color: var(--color-lightblue);
+}
+
+.layout__content {
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.layout__head .layout__content,
+.layout__footer .layout__content {
+  height: 100%;
+}

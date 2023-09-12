@@ -1,0 +1,30 @@
+.deposits {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.deposit {
+  width: 240px;
+  height: 240px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 15px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.deposit__name {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.deposit__info-row {
+  display: flex;
+  margin: 5px 0;
+}
+
+.deposit__info-row > * {
+  flex: 1;
+}
