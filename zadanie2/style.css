@@ -1,0 +1,77 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Стили для разделов сайта */
+.about-us,
+.catalog,
+.contact {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.about-us h2,
+.catalog h2,
+.contact h2 {
+    font-size: 24px;
+}
+
+/* Дополнительные стили для фильтров, товаров и контактных данных */
+.filters {
+    margin-bottom: 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    width: calc(33.33% - 20px);
+    margin: 0 10px 20px 0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.map {
+    height: 300px;
+    background-color: #f0f0f0;
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+/* Стили для футера */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}

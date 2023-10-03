@@ -1,0 +1,62 @@
+body{
+    background-color: black;
+}
+.container {
+    cursor: pointer;
+}
+
+.container input {
+    display: none;
+}
+
+.container svg {
+    overflow: visible;
+}
+
+.path {
+    fill: none;
+    stroke: white;
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dasharray 0.5s ease, stroke-dashoffset 0.5s ease;
+    stroke-dasharray: 241 9999999;
+    stroke-dashoffset: 0;
+}
+
+.container input:checked ~ svg .path {
+    stroke-dasharray: 70.5096664428711 9999999;
+    stroke-dashoffset: -262.2723388671875;
+}
+.input-group {
+    position: relative;
+}
+.input-group_input {
+    font: inherit;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: 2px solid #fff;
+    background-color: transparent;
+    transition: outline-color 500ms;
+}
+.input-group_input:focus,
+.input-group_input:valid {
+    outline-color: #3d51ee;
+}
+.input-group_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(10px, 10px);
+    color: #fff;
+    transition: transform 500ms, scale 500ms, background-color 500ms;
+}
+.input-group_input:focus + .input-group_label,
+.input-group_input:valid + .input-group_label {
+    padding-inline-start: 5px;
+    padding-inline-end: 5px;
+    transform: translate(10px, -14px) scale(0.8);
+    background-color: #000;
+}

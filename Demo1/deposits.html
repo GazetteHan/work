@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="styles/colors.css"     rel="stylesheet">
+    <link href="styles/deposits.css"   rel="stylesheet">
+    <link href="styles/layout.css"     rel="stylesheet">
+    <link href="styles/reset.css"      rel="stylesheet">
+    <link href="styles/typography.css" rel="stylesheet">
+    <link href="styles/index.css"      rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="body_vklad">
+<div class="layout__head">
+    <div class="layout__content header_content">
+        <div class="typography_h4"><a class="link" href="index.html">БАНК</a></div>
+        <div class="menu header_content">
+            <div class="typography_p1"><a class="link" href="#">Вклады</a></div>
+            <div class="typography_p1"><a class="link" href="#">Вопросы</a></div>
+            <div class="typography_p1"><a class="link" href="#">Контакты</a></div>
+            <div class="typography_p1"><a class="link" href="#">8 495 234-56-78</a></div>
+        </div>
+    </div>
+
+    <div class="main main-deposits layout__content">
+        <div class="typography_h1">Вклады</div>
+            <div style="height: 200px" class="deposits_vclad layout__head">
+                <form action="">
+                    <div>
+                        <div class="typography_p1 link">Сумма</div>
+                        <div>
+                            <input class="filters__button align_button typography_h4" type="text">
+                        </div>
+                    </div>
+                </form>
+                <div>
+                    <div class="typography_p1 link">Срок</div>
+                    <select class="filters__button align_button typography_h4">
+                        <option value="first">6 мес</option>
+                        <option value="first">12 мес</option>
+                        <option value="first">24 мес</option>
+                        <option value="first">36 мес</option>
+                    </select>
+                </div>
+                <div>
+                    <div class="typography_p1 link"></div>
+                    <button class="typography_h4 filters__button align_button" type="button">Показать вклады</button>
+                </div>
+
+            </div>
+
+        <div class="deposits " id="deposits"></div>
+
+
+    </div>
+
+    <div class="lock_text">
+        <div class="lock">
+            <img src="./images/lock.png" alt="">
+        </div>
+        <div>
+            <div class="text_lock typography_h1 ">
+                Ваш вклад застрахован<br>
+                государством
+            </div>
+
+            <div class="agentstvo ">
+                <img src="./images/agentstvo-po-strahovaniju-vkladov.png" alt="">
+            </div>
+
+            <div class="text_main typography_h4 ">
+                «Банк» включен в реестр банков-участников системы обязательного<br>
+                страхования вкладов. Защита прав и законных интересов вкладчиков<br>
+                банка осуществляется в соответствии с федеральным законом «О<br>
+                страховании вкладов физических лиц в банках Российской Федерации».<br>
+                Система страхования вкладов защитит ваши деньги<br>
+                и гарантированно вернет вам до 1 400 000 рублей.<br>
+            </div>
+        </div>
+    </div>
+    <div class="footer deposits_footer ">
+        <div class="color-text layout__content link">
+            <div class="footer-img">
+                <img src="images/agentstvo-po-strahovaniju-vkladov.png" alt="">
+            </div>
+
+            <div>
+                Вклады «Банка»<br>
+                застрахованы государством
+            </div>
+
+            <div>
+                © «Банк», 2017 г.<br>
+                Банковская лицензия № ХХХХ от 10.09.2015
+            </div>
+
+            <div>
+                ул. Малая Полоцкая, дом 5, лит. B<br>
+                Пн – Пт: 9:00 – 19:00, без перерыва.<br>
+                Сб, Вс: выходной
+                <br>
+                <br>
+                8 495 234-56-78
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="scripts/index.js"></script>
+<script>
+    let data = DEPOSITS_DATA;
+
+    console.log(data);
+
+    for (index_data = 0; index_data < data.length; ++index_data){
+        const name = data[index_data]['name'];
+        const Number = data[index_data]['amount'];
+        const interestRate = data[index_data]['interestRate'];
+        const timePeriodMonths = data[index_data]['timePeriodMonths'];
+        document.getElementById('deposits').innerHTML +=`
+  <div class="deposit">
+    <h2 class="deposit__name">${name}</h2>
+    <div class="deposit__info-row">
+      <span>Сумма вклада</span> <span>от ${Number} ₽</span>
+    </div>
+    <div class="deposit__info-row">
+      <span>Ставка</span> <span>${interestRate}%</span>
+    </div>
+    <div class="deposit__info-row">
+      <span>Срок</span> <span>${timePeriodMonths} мес</span>
+    </div>
+  </div>`;
+    }
+
+</script>
+</html>
