@@ -1,8 +1,3 @@
-body {
-  background-color: #eff4f9;
-  padding: 20px;
-  width: 1280px;
-}
 
 .filters__button {
 background: #0C54A0;
@@ -13,145 +8,248 @@ border: 0px;
 padding: 12px 16px;
 }
 
-.header{
-  width: 1280px;
-  height: 72px;
-}
-.header_content{
-  display: flex;
-}
+/*.header{*/
+/*  width: 1280px;*/
+/*  height: 72px;*/
+/*}*/
+/*.header_content{*/
+/*  display: flex;*/
+/*}*/
 
-.logo{
-  font-size: 28px;
-  padding-top: 19px;
-  padding-left: 76px;
-}
+/*.logo{*/
+/*  font-size: 28px;*/
+/*  padding-top: 19px;*/
+/*  padding-left: 76px;*/
+/*}*/
 
 .menu{
   display: flex;
-  padding-left: 589px;
-  padding-top: 24px;
-  font-size: 18px;
+  align-items: center;
+  align-content: center;
 }
-
-.menu_content{
+.menu div{
   padding-left: 28px;
 }
-
-.number{
-  font-size: 18px;
-  padding-left: 28px;
-  padding-top: 24px;
+.main{
+  margin-top: 40px;
 }
-.main_bloc{
-  background: black;
-  width: 1280px;
-  height: 686px;
-}
-.main_img{
-  opacity: 0.6;
-  background-size: cover;
-  width: 1280px;
-  height: 686px;
-  position: relative;
-}
-.color_text{
-  color: #FFFFFF;
-}
-.main_text img{
-  width: 55px;
-  height: 55px;
-
-}
-
-.main_text{
-  position: absolute;
-  top: 201px;
-  left: 76px;
-}
-
-.main_bloc_text{
-  padding-top: 55px;
-  display: flex;
-}
-.main_bloc_text div div:first-child{
-  width: 56px;
-  height: 56px;
-}
-.main_bloc_text div div:last-child{
-  padding-top:11px;
-}
-.main_bloc_text div{
-  display: flex;
-}
-.main_bloc_text_1{
-  padding-left: 40px;
-}
-.content_bloc{
-  padding-top: 77px;
-  padding-left: 76px;
-}
-.content_text{
-  padding-top: 60px;
-}
-
-.photo img{
-  width: 143px;
-  height: 143px;
-  border-radius: 50%;
-}
-.photo_text{
-  display: flex;
-  padding-top: 66px;
-}
-.content_main_text{
-  padding-left: 33px;
-}
-.content_main_text_1{
-  padding-top: 18px;
-  color: gray;
-}
-.numbers{
-  justify-content: space-between;
-  padding-top: 60px;
-  display: flex;
-}
-.numbers div div:first-child{
-  font-size: 40px;
-  color: blue;
-}
-.numbers div div:last-child{
-  padding-top: 4px;
-}
-.container{
-  position: relative;
-}
-.map{
-  position: absolute;
-  top: 795px;
-  left: 350px;
-  width: 485.548px;
-  height: 299.755px;
+.content{
+  margin-top: 50px;
 }
 .footer{
-  margin-top: 148px;
   background-color: #041629;
-  width: 1292px;
-  height: 240px;
 }
-.footer div{
-  width: 100%;
-  height: 240px;
-  align-items: center;
+.main_content{
+  margin-top: 839px;
+}
+.main_bloc{
+  background: url("../images/Tyumen.jpg");
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+  height: 685px;
+  box-shadow: #041629;
+}
+.header_text{
+  padding-top: 130px;
+}
+.display{
   display: flex;
+}
+.text_header{
+  padding-top: 55px;
+}
+.text_header{
+
+}
+.image_text{
+  margin-left: 20px;
+}
+
+img {
+  vertical-align: middle;
+}
+.flex-center{
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+.last_image{
+  margin-left: 40px;
+}
+.container{
+  display: flex;
+}
+.content_bloc{
+  margin-top: 69px;
+
+}
+.content_text{
+  margin-top: 60px;
+}
+.container-imag{
+  margin-top: 100px;
+  margin-left: 70px;
+}
+.photo_text{
+  margin-top: 60px;
+  display: flex;
+}
+.photo img{
+  width: 150px;
+  height: 140px;
+  border-radius: 50%;
+}
+.content_main_text{
+  margin-left: 20px;
+}
+.content_main_text_1{
+  margin-top: 18px;
+  color: var(--grey, #AFB8C2);
+}
+.numbers{
+  display: flex;
+  padding-top: 60px;
   justify-content: space-between;
 }
-.footer div div{
+.number div:first-child{
+  font-size: 40px;
+  color: var(--blue, #0C54A0);
+}
+.index_footer{
+  margin-top: 160px;
+  height: 240px;
+
+}
+.color-text{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.index_footer-img img{
   width: 224px;
   height: 72px;
 }
-.footer img{
-  border-radius: 5px;
-  width: 224px;
-  height: 72px;
+.footer-img img{
+  width: 185px;
+  border-radius: 3%;
 }
+/*.menu_content{*/
+/*  padding-left: 28px;*/
+/*}*/
+
+/*.number{*/
+/*  font-size: 18px;*/
+/*  padding-left: 28px;*/
+/*  padding-top: 24px;*/
+/*}*/
+/*.main_bloc{*/
+/*  background: black;*/
+/*  width: 1280px;*/
+/*  height: 686px;*/
+/*}*/
+/*.main_img{*/
+/*  opacity: 0.6;*/
+/*  background-size: cover;*/
+/*  width: 1280px;*/
+/*  height: 686px;*/
+/*  position: relative;*/
+/*}*/
+/*.color_text{*/
+/*  color: #FFFFFF;*/
+/*}*/
+/*.main_text img{*/
+/*  width: 55px;*/
+/*  height: 55px;*/
+
+/*}*/
+
+/*.main_text{*/
+/*  position: absolute;*/
+/*  top: 201px;*/
+/*  left: 76px;*/
+/*}*/
+
+/*.main_bloc_text{*/
+/*  padding-top: 55px;*/
+/*  display: flex;*/
+/*}*/
+/*.main_bloc_text div div:first-child{*/
+/*  width: 56px;*/
+/*  height: 56px;*/
+/*}*/
+/*.main_bloc_text div div:last-child{*/
+/*  padding-top:11px;*/
+/*}*/
+/*.main_bloc_text div{*/
+/*  display: flex;*/
+/*}*/
+/*.main_bloc_text_1{*/
+/*  padding-left: 40px;*/
+/*}*/
+/*.content_bloc{*/
+/*  padding-top: 77px;*/
+/*  padding-left: 76px;*/
+/*}*/
+/*.content_text{*/
+/*  padding-top: 60px;*/
+/*}*/
+
+/*.photo img{*/
+/*  width: 143px;*/
+/*  height: 143px;*/
+/*  border-radius: 50%;*/
+/*}*/
+/*.photo_text{*/
+/*  display: flex;*/
+/*  padding-top: 66px;*/
+/*}*/
+/*.content_main_text{*/
+/*  padding-left: 33px;*/
+/*}*/
+/*.content_main_text_1{*/
+/*  padding-top: 18px;*/
+/*  color: gray;*/
+/*}*/
+/*.numbers{*/
+/*  justify-content: space-between;*/
+/*  padding-top: 60px;*/
+/*  display: flex;*/
+/*}*/
+/*.numbers div div:first-child{*/
+/*  font-size: 40px;*/
+/*  color: blue;*/
+/*}*/
+/*.numbers div div:last-child{*/
+/*  padding-top: 4px;*/
+/*}*/
+/*.container{*/
+/*  position: relative;*/
+/*}*/
+/*.map{*/
+/*  position: absolute;*/
+/*  top: 795px;*/
+/*  left: 350px;*/
+/*  width: 485.548px;*/
+/*  height: 299.755px;*/
+/*}*/
+/*.footer{*/
+/*  margin-top: 148px;*/
+/*  background-color: #041629;*/
+/*  width: 1292px;*/
+/*  height: 240px;*/
+/*}*/
+/*.footer div{*/
+/*  width: 100%;*/
+/*  height: 240px;*/
+/*  align-items: center;*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*}*/
+/*.footer div div{*/
+/*  width: 224px;*/
+/*  height: 72px;*/
+/*}*/
+/*.footer img{*/
+/*  border-radius: 5px;*/
+/*  width: 224px;*/
+/*  height: 72px;*/
+/*}*/

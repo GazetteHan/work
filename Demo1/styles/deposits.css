@@ -28,3 +28,34 @@
 .deposit__info-row > * {
   flex: 1;
 }
+.body_vklad{
+  background-color: #eff4f9;
+}
+.deposits_vclad{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lock_text{
+  display: flex;
+  background-color: white;
+  margin-top: 839px;
+  padding-bottom: 686px;
+
+}
+.text_lock{
+  margin-top: 270px;
+}
+.agentstvo{
+  margin-top: 33px;
+}
+.text_main{
+  margin-top: 20px;
+}
+.deposits_footer{
+ height: 240px;
+}
+.voprasy_footer{
+  margin-top: 671px;
+  height: 240px;
+}
