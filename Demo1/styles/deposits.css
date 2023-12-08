@@ -36,6 +36,15 @@
   align-items: center;
   justify-content: space-between;
 }
+.summ{
+  margin-left: 35px;
+}
+.button_deposits{
+  margin-right: 35px;
+}
+.align_button{
+  margin-top: 20px;
+}
 .lock_text{
   display: flex;
   background-color: white;
